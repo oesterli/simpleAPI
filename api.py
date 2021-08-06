@@ -25,7 +25,8 @@ books = [
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>ON-testAPI: Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels."
+    return '''<h1>ON-testAPI: Distant Reading Archive</h1>
+    <p>This site is a prototype API for distant reading of science fiction novels.'''
 
 # A route to return all of the available entries in our catalog.
 @app.route('/api/v1/resources/books/all', methods=['GET'])
@@ -39,6 +40,7 @@ def api_id():
     # If no ID is provided, display an error in the browser.
     if 'id' in request.args:
         id = int(request.args['id'])
+
     else:
         return "Error: No id field provided. Please specify an id."
 
